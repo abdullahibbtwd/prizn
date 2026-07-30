@@ -11,11 +11,12 @@ export function SupportPrizni() {
           <OptimizedImage
             src={images.festival}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-35"
+            className="absolute inset-0 h-full w-full object-cover opacity-85"
           />
 
-          {/* Deep Brand Gradient Fill */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0C2686]/95 via-[#0C2686]/90 to-[#4051C7]/85" />
+          {/* Soft Dark Vignette Overlay so image is clear & visible */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-[#0C2686]/40 to-slate-950/60" />
+          <div className="absolute inset-0 bg-[#0C2686]/25" />
 
           {/* Ambient Lighting Orbs */}
           <div className="glow-orb-yellow absolute -left-20 top-10 size-80 opacity-40 pointer-events-none" />
