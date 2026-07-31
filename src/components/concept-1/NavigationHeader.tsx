@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Search, Menu, X, HeartHandshake, PenLine } from 'lucide-react'
 import { Logo } from '@/components/concept-1/Logo'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn, handleSmoothNavClick } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
@@ -43,6 +43,7 @@ export function NavigationHeader() {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleSmoothNavClick(e, link.href, 84)}
               className="group relative text-sm font-bold text-ink/80 transition-colors duration-300 hover:text-brand"
             >
               {link.label}
@@ -118,7 +119,10 @@ export function NavigationHeader() {
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    handleSmoothNavClick(e, link.href, 84)
+                    setMobileMenuOpen(false)
+                  }}
                   className="rounded-lg px-3 py-2 text-base font-bold text-ink transition-colors hover:bg-canvas hover:text-brand"
                 >
                   {link.label}

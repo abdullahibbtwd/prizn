@@ -10,6 +10,7 @@ import { Traditions } from '@/components/concept-1/Traditions'
 import { SupportPrizni } from '@/components/concept-1/SupportPrizni'
 import { Newsletter } from '@/components/concept-1/Newsletter'
 import { Footer } from '@/components/concept-1/Footer'
+import { ConceptSwitcher } from '@/components/concept-2/ConceptSwitcher'
 
 export default function Concept1Page() {
   return (
@@ -28,6 +29,8 @@ export default function Concept1Page() {
         <Newsletter />
       </main>
       <Footer />
+      <ConceptSwitcher />
     </div>
   )
 }
+
