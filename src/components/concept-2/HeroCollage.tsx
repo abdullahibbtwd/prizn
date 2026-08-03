@@ -22,7 +22,7 @@ export function HeroCollage() {
           >
             <Sparkles className="size-3.5 text-[#0C2686]" />
             <span className="text-xs font-bold uppercase tracking-wider text-[#0C2686]">
-              Концепция 2 — Живият Северозапад
+              Концепция 2 - Живият Северозапад
             </span>
           </motion.div>
 

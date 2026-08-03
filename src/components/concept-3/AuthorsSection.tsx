@@ -1,0 +1,65 @@
+import { motion } from 'framer-motion'
+import { journalContent } from '@/data/concept-3/content'
+
+interface AuthorsSectionProps {
+  lang: 'bg' | 'en'
+}
+
+export function AuthorsSection({ lang }: AuthorsSectionProps) {
+  const authors = journalContent.authors
+
+  return (
+    <section id="authors" className="bg-[#FDFBF7] py-20 md:py-28 px-6 md:px-12 border-t border-[#EAE6DF]">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto mb-14 max-w-2xl text-center md:mb-16">
+          <p className="font-sans text-xs uppercase tracking-[0.3em] text-[#0C2686]/80">
+            {lang === 'bg' ? 'Автори' : 'Authors'}
+          </p>
+          <h2 className="mt-3 font-heading text-4xl font-light tracking-tight text-[#1A1A1A] md:text-5xl">
+            {lang === 'bg' ? 'Гласовете на Призни' : 'The voices of Prizni'}
+          </h2>
+          <p className="mx-auto mt-4 max-w-md font-sans text-sm font-light leading-relaxed text-[#1A1A1A]/55">
+            {lang === 'bg'
+              ? 'Редактори и фотографи, които събират истории из Северозапада.'
+              : 'Editors and photographers gathering stories across the Northwest.'}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {authors.map((author, index) => (
+            <motion.article
+              key={author.id}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.06 }}
+              className="group"
+            >
+              <div className="relative mb-5 aspect-[3/4] overflow-hidden rounded-[4px] bg-[#EAE6DF]">
+                <img
+                  src={author.image}
+                  alt={lang === 'bg' ? author.nameBg : author.name}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <div className="border-t border-[#EAE6DF] pt-4">
+                <h3 className="font-heading text-xl font-normal text-[#1A1A1A] md:text-2xl">
+                  {lang === 'bg' ? author.nameBg : author.name}
+                </h3>
+                <p className="mt-1 font-sans text-[11px] uppercase tracking-[0.2em] text-[#1A1A1A]/45">
+                  {lang === 'bg' ? author.roleBg : author.role}
+                  <span className="mx-2 text-[#EAE6DF]">·</span>
+                  {author.stories} {lang === 'bg' ? 'истории' : 'stories'}
+                </p>
+                <p className="mt-3 font-heading text-[15px] italic leading-relaxed text-[#1A1A1A]/60">
+                  “{lang === 'bg' ? author.quoteBg : author.quote}”
+                </p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

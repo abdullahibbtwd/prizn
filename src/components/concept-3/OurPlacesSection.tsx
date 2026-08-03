@@ -16,10 +16,10 @@ export function OurPlacesSection({ lang, onDiscoverPlace }: OurPlacesSectionProp
         {/* Minimal Header */}
         <div className="mb-16 text-center">
           <span className="text-xs uppercase tracking-[0.3em] font-sans text-[#0C2686] font-medium block mb-2">
-            {lang === 'bg' ? 'Нашите Места' : 'Our Places'}
+            {lang === 'bg' ? 'География' : 'Geography'}
           </span>
           <h2 className="font-heading text-4xl md:text-5xl text-[#1A1A1A] font-light">
-            {lang === 'bg' ? 'Пейзажи & Забележителности' : 'Landscapes of the Northwest'}
+            {lang === 'bg' ? 'Открийте региона' : 'Explore the Region'}
           </h2>
         </div>
 

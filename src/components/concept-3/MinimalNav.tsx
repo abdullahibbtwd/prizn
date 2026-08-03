@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, X, Globe, Menu } from 'lucide-react'
+import { Search, X, Globe, Menu, Heart, ChevronDown, PenLine, Handshake } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Logo } from '@/components/concept-1/Logo'
 import { cn, handleSmoothNavClick } from '@/lib/utils'
@@ -15,21 +15,57 @@ export function MinimalNav({ lang, setLang }: MinimalNavProps) {
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [contributeOpen, setContributeOpen] = useState(false)
+  const contributeRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40)
+      setContributeOpen(false)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    const onPointerDown = (event: MouseEvent) => {
+      if (!contributeRef.current?.contains(event.target as Node)) {
+        setContributeOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', onPointerDown)
+    return () => document.removeEventListener('mousedown', onPointerDown)
+  }, [])
+
   const navLinks = [
     { label: lang === 'bg' ? 'Истории' : 'Stories', href: '#featured-story' },
-    { label: lang === 'bg' ? 'Колекции' : 'Collections', href: '#collections' },
     { label: lang === 'bg' ? 'Места' : 'Places', href: '#places' },
-    { label: lang === 'bg' ? 'Традиции' : 'Traditions', href: '#traditions' },
-    { label: lang === 'bg' ? 'Гласове' : 'Voices', href: '#voices' },
+    { label: lang === 'bg' ? 'Открийте' : 'Discover', href: '#discover' },
+  ]
+
+  const contributeLinks = [
+    {
+      label: lang === 'bg' ? 'Пишете за нас' : 'Write for Us',
+      href: '#write-for-us',
+      icon: PenLine,
+    },
+    {
+      label: lang === 'bg' ? 'Подкрепете ни' : 'Support Us',
+      href: '#support',
+      icon: Heart,
+    },
+    {
+      label: lang === 'bg' ? 'Партньорства' : 'Partnerships',
+      href: '#partnerships',
+      icon: Handshake,
+    },
+  ]
+
+  const mobileLinks = [
+    ...navLinks,
+    { label: lang === 'bg' ? 'Автори' : 'Authors', href: '#authors' },
+    ...contributeLinks.map(({ label, href }) => ({ label, href })),
+    { label: lang === 'bg' ? 'За нас' : 'About', href: '#editors-letter' },
   ]
 
   const searchSuggestions = [
@@ -54,8 +90,7 @@ export function MinimalNav({ lang, setLang }: MinimalNavProps) {
             : 'bg-transparent py-6 md:py-8'
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Brand Logo */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between gap-4">
           <Link
             to="/concept-3"
             className="shrink-0 transition-opacity hover:opacity-90"
@@ -69,11 +104,10 @@ export function MinimalNav({ lang, setLang }: MinimalNavProps) {
             />
           </Link>
 
-          {/* Center Links - Minimal Typography */}
           <nav className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
-                key={link.label}
+                key={link.href}
                 href={link.href}
                 onClick={(e) => handleSmoothNavClick(e, link.href, 96)}
                 className={cn(
@@ -86,9 +120,7 @@ export function MinimalNav({ lang, setLang }: MinimalNavProps) {
             ))}
           </nav>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-5">
-            {/* Search Trigger */}
+          <div className="flex items-center gap-3 md:gap-4">
             <button
               onClick={() => setSearchOpen(true)}
               className={cn(
@@ -103,7 +135,63 @@ export function MinimalNav({ lang, setLang }: MinimalNavProps) {
               <span className="hidden sm:inline font-sans">{lang === 'bg' ? 'Търсене' : 'Search'}</span>
             </button>
 
-            {/* Language Switcher */}
+            {/* Contribute dropdown */}
+            <div ref={contributeRef} className="relative hidden sm:block">
+              <button
+                type="button"
+                onClick={() => setContributeOpen((open) => !open)}
+                className={cn(
+                  'inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[11px] font-sans uppercase tracking-[0.18em] font-medium transition-all duration-300',
+                  scrolled
+                    ? 'bg-[#0C2686] text-white hover:bg-[#1A1A1A]'
+                    : 'bg-white text-[#1A1A1A] hover:bg-white/90'
+                )}
+                aria-expanded={contributeOpen}
+                aria-haspopup="menu"
+              >
+                <Heart className="size-3 fill-current" />
+                {lang === 'bg' ? 'Присъединете се' : 'Contribute'}
+                <ChevronDown
+                  className={cn(
+                    'size-3.5 transition-transform duration-300',
+                    contributeOpen && 'rotate-180'
+                  )}
+                />
+              </button>
+
+              <AnimatePresence>
+                {contributeOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18 }}
+                    role="menu"
+                    className="absolute right-0 mt-3 min-w-[210px] overflow-hidden rounded-2xl border border-[#EAE6DF] bg-[#FDFBF7] py-2 shadow-xl"
+                  >
+                    {contributeLinks.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          role="menuitem"
+                          onClick={(e) => {
+                            handleSmoothNavClick(e, item.href, 96)
+                            setContributeOpen(false)
+                          }}
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-sans uppercase tracking-[0.16em] text-[#1A1A1A]/75 transition-colors hover:bg-[#0C2686]/5 hover:text-[#0C2686]"
+                        >
+                          <Icon className="size-3.5 shrink-0" />
+                          {item.label}
+                        </a>
+                      )
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <button
               onClick={() => setLang(lang === 'bg' ? 'en' : 'bg')}
               className={cn(
@@ -117,7 +205,6 @@ export function MinimalNav({ lang, setLang }: MinimalNavProps) {
               <span>{lang.toUpperCase()}</span>
             </button>
 
-            {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={cn(
@@ -132,19 +219,18 @@ export function MinimalNav({ lang, setLang }: MinimalNavProps) {
         </div>
       </header>
 
-      {/* Mobile Menu Dropdown */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-[70px] z-30 bg-[#FDFBF7] border-b border-[#EAE6DF] px-8 py-8 shadow-xl md:hidden"
+            className="fixed inset-x-0 top-[70px] z-30 max-h-[calc(100svh-70px)] overflow-y-auto bg-[#FDFBF7] border-b border-[#EAE6DF] px-8 py-8 shadow-xl md:hidden"
           >
-            <div className="flex flex-col gap-6 text-center">
-              {navLinks.map((link) => (
+            <div className="flex flex-col gap-5 text-center">
+              {mobileLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                   onClick={(e) => {
                     handleSmoothNavClick(e, link.href, 96)
@@ -155,12 +241,31 @@ export function MinimalNav({ lang, setLang }: MinimalNavProps) {
                   {link.label}
                 </a>
               ))}
+
+              <div className="mt-2 flex flex-col gap-3 border-t border-[#EAE6DF] pt-5">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    setSearchOpen(true)
+                  }}
+                  className="inline-flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-[#1A1A1A]/70"
+                >
+                  <Search className="size-3.5" />
+                  {lang === 'bg' ? 'Търсене' : 'Search'}
+                </button>
+                <button
+                  onClick={() => setLang(lang === 'bg' ? 'en' : 'bg')}
+                  className="inline-flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-[#1A1A1A]/70"
+                >
+                  <Globe className="size-3.5" />
+                  {lang === 'bg' ? 'Език: BG' : 'Language: EN'}
+                </button>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Search Overlay */}
       <AnimatePresence>
         {searchOpen && (
           <motion.div

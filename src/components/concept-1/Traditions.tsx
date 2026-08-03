@@ -28,7 +28,7 @@ export function Traditions() {
       <div className="relative mx-auto max-w-7xl">
         <SectionHeading
           title="Традиции"
-          subtitle="Наследствени практики, предавани през поколения — все още живи в домовете и празниците."
+          subtitle="Наследствени практики, предавани през поколения - все още живи в домовете и празниците."
           badgeText="Културно наследство"
         />
 

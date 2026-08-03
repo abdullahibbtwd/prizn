@@ -35,7 +35,7 @@ export function TodaysStory() {
             
             <p className="mt-5 text-base leading-relaxed text-white/90 md:text-lg">
               Как малък екип от куратори преосмисля наследството за ново
-              поколение — артефакт по артефакт, история по история.
+              поколение - артефакт по артефакт, история по история.
             </p>
 
             <Button

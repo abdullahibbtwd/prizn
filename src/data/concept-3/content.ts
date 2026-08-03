@@ -18,14 +18,15 @@ export const journalContent = {
       "Every person leaves a trace.",
     ],
     welcome: "Welcome to another journey through Northwestern Bulgaria.",
-    signature: "— Albena",
+    signature: "- Albena",
   },
   featuredStory: {
     category: "Human Stories",
     categoryBg: "Човешки истории",
     title: "Along the Walnut Paths of Northwestern Bulgaria",
     titleBg: "По ореховите пътеки на Северозапада",
-    subtitle: "A silent walk through forgotten stone villages where old walnut trees guard the wisdom of generations.",
+    subtitle:
+      "A silent walk through forgotten stone villages where old walnut trees guard the wisdom of generations.",
     readTime: "12 min read",
     readTimeBg: "12 мин четене",
     author: "Albena Stoyanova",
@@ -35,8 +36,8 @@ export const journalContent = {
     fullContent: [
       "There is a specific rhythm to dawn in the villages surrounding Belogradchik. Long before the sun reaches the red sandstone cliffs, a cool mist settles over the stone paths lined with ancient walnut trees.",
       "For over eighty years, Grandfather Ivan has walked these paths every morning. His hands, weathered like the bark of the trees he tends, carry the silent history of a region that the rest of the world often passes by.",
-      "\"We do not own this land,\" he tells us, pouring warm herb tea brewed from mountain thyme. \"We are merely its keepers for a short while. Every tree here was planted by someone who wanted to leave a shadow for those who came after.\"",
-      "In this edition of The Living Journal, we invite you to slow down. To step off the asphalt roads into the narrow stone lanes where doors are rarely locked, and where every cup of coffee is accompanied by an unforgettable memory."
+      '"We do not own this land," he tells us, pouring warm herb tea brewed from mountain thyme. "We are merely its keepers for a short while. Every tree here was planted by someone who wanted to leave a shadow for those who came after."',
+      "In this edition of The Living Journal, we invite you to slow down. To step off the asphalt roads into the narrow stone lanes where doors are rarely locked, and where every cup of coffee is accompanied by an unforgettable memory.",
     ],
   },
   collections: [
@@ -47,7 +48,8 @@ export const journalContent = {
       count: "6 Stories",
       countBg: "6 Истории",
       image: "/festival.jpg",
-      description: "Awakening of the earth, ritual breads, and ancient rites of rebirth in mountain settlements.",
+      description:
+        "Awakening of the earth, ritual breads, and ancient rites of rebirth in mountain settlements.",
     },
     {
       id: "mountain-villages",
@@ -56,7 +58,8 @@ export const journalContent = {
       count: "8 Stories",
       countBg: "8 Истории",
       image: "/mountains.jpg",
-      description: "Stone roofs, silent valleys, and life tucked high above the clouds in Vratsa Balkan.",
+      description:
+        "Stone roofs, silent valleys, and life tucked high above the clouds in Vratsa Balkan.",
     },
     {
       id: "danube-stories",
@@ -65,7 +68,8 @@ export const journalContent = {
       count: "5 Stories",
       countBg: "5 Истории",
       image: "/river.jpg",
-      description: "Old wooden boats, morning river mist, and fishermen tales from Vidin to Lom.",
+      description:
+        "Old wooden boats, morning river mist, and fishermen tales from Vidin to Lom.",
     },
     {
       id: "crafts",
@@ -74,7 +78,8 @@ export const journalContent = {
       count: "7 Stories",
       countBg: "7 Истории",
       image: "/craftsman.jpg",
-      description: "Hands that shape clay, weave sacred kilims, and preserve centuries of ancestral skill.",
+      description:
+        "Hands that shape clay, weave sacred kilims, and preserve centuries of ancestral skill.",
     },
     {
       id: "hidden-places",
@@ -83,7 +88,8 @@ export const journalContent = {
       count: "9 Stories",
       countBg: "9 Истории",
       image: "/church.jpg",
-      description: "Forgotten chapels, secret waterfalls, and quiet sanctuaries in the heart of nature.",
+      description:
+        "Forgotten chapels, secret waterfalls, and quiet sanctuaries in the heart of nature.",
     },
   ],
   gallery: [
@@ -147,7 +153,8 @@ export const journalContent = {
       readTime: "5 min",
       action: "Discover",
       actionBg: "Открийте",
-      detail: "Formed over 200 million years ago, the Belogradchik Rocks stand as silent sentinels over ancient fortresses and hidden caves.",
+      detail:
+        "Formed over 200 million years ago, the Belogradchik Rocks stand as silent sentinels over ancient fortresses and hidden caves.",
     },
     {
       id: "varshets",
@@ -159,7 +166,8 @@ export const journalContent = {
       readTime: "4 min",
       action: "Discover",
       actionBg: "Открийте",
-      detail: "Nestled at the foot of Mount Todorini Kukli, Varshets is Bulgaria's oldest spa resort, famous for its romantic beech alley.",
+      detail:
+        "Nestled at the foot of Mount Todorini Kukli, Varshets is Bulgaria's oldest spa resort, famous for its romantic beech alley.",
     },
     {
       id: "chiprovtsi",
@@ -171,7 +179,8 @@ export const journalContent = {
       readTime: "6 min",
       action: "Discover",
       actionBg: "Открийте",
-      detail: "UNESCO-recognized carpet weaving traditions where every geometric shape carries deep spiritual symbolism.",
+      detail:
+        "UNESCO-recognized carpet weaving traditions where every geometric shape carries deep spiritual symbolism.",
     },
     {
       id: "vratsa-pass",
@@ -183,7 +192,8 @@ export const journalContent = {
       readTime: "7 min",
       action: "Discover",
       actionBg: "Открийте",
-      detail: "Sheer 300-meter vertical cliffs framing the entrance to the Balkan mountains and hidden stone sanctuaries.",
+      detail:
+        "Sheer 300-meter vertical cliffs framing the entrance to the Balkan mountains and hidden stone sanctuaries.",
     },
   ],
   traditions: [
@@ -193,41 +203,139 @@ export const journalContent = {
       titleBg: "Хляб & Квас",
       sub: "The sacred hearth ritual",
       image: "/bread.jpg",
-      description: "Baking sourdough bread using stone ovens and natural yeast passed down through three generations.",
+      description:
+        "Baking sourdough bread using stone ovens and natural yeast passed down through three generations.",
     },
     {
       id: "t2",
-      title: "Pottery",
-      titleBg: "Чипровска Керамика",
-      sub: "Earth, water, and fire",
-      image: "/craftsman.jpg",
-      description: "Glazed earthen vessels painted with traditional geometric symbols representing nature and family harmony.",
+      title: "Wedding Customs",
+      titleBg: "Сватбени обичаи",
+      sub: "Rituals of union",
+      image: "/festival.jpg",
+      description:
+        "Uneven rhythms, haunting brass tunes, and village wedding customs unique to the Danubian plain.",
     },
     {
       id: "t3",
-      title: "Folk Music",
-      titleBg: "Северозападен Фолклор",
-      sub: "Songs of the river and mountain",
-      image: "/festival.jpg",
-      description: "Uneven rhythms, haunting brass tunes, and polyphonic vocal harmony unique to the Danubian plain.",
-    },
-    {
-      id: "t4",
       title: "Harvest",
       titleBg: "Жътва в Равнината",
       sub: "Golden fields of summer",
       image: "/river.jpg",
-      description: "Community harvest customs celebrating the yield of wheat, walnuts, and sunflowers across the fertile plain.",
-    },
-    {
-      id: "t5",
-      title: "Embroidery",
-      titleBg: "Българска Везба",
-      sub: "Codes woven into fabric",
-      image: "/woman.jpg",
-      description: "Intricate red and black needlework on linen garments, acting as protective symbols for the wearer.",
+      description:
+        "Community harvest customs celebrating the yield of wheat, walnuts, and sunflowers across the fertile plain.",
     },
   ],
+  humanStories: [
+    {
+      id: "hs1",
+      title: "The Walnut Keeper of Varbovo",
+      titleBg: "Пазителят на орехите във Върбово",
+      author: "Albena Nikolova",
+      readTime: "8 min",
+      readTimeBg: "8 мин",
+      location: "с. Върбово",
+      image: "/woman.jpg",
+      excerpt:
+        "Every morning before dawn, Ana-Maria walks the same stone path her grandmother once did.",
+    },
+    {
+      id: "hs2",
+      title: "Letters from the Danube Shore",
+      titleBg: "Писма от брега на Дунава",
+      author: "Inna Gerova",
+      readTime: "11 min",
+      readTimeBg: "11 мин",
+      location: "Видин",
+      image: "/river.jpg",
+      excerpt:
+        "A fisherman's handwritten journals reveal fifty years of river weather, loss, and quiet joy.",
+    },
+    {
+      id: "hs3",
+      title: "The Carpet That Remembered",
+      titleBg: "Килимът, който помнеше",
+      author: "Angelika Petrova",
+      readTime: "9 min",
+      readTimeBg: "9 мин",
+      location: "Чипровци",
+      image: "/festival.jpg",
+      excerpt:
+        "Between every knot of a Chiprovtsi kilim lives a silence older than the village itself.",
+    },
+  ],
+  authors: [
+    {
+      id: "a1",
+      name: "Albena Nikolova",
+      nameBg: "Албена Николова",
+      role: "Editor-in-Chief",
+      roleBg: "Главен редактор",
+      stories: 18,
+      quote: "Believes every village has a story worth preserving.",
+      quoteBg:
+        "Вярва, че всяко село пази история, която си струва да се разкаже.",
+      image: "/woman.jpg",
+    },
+    {
+      id: "a2",
+      name: "Inna Gerova",
+      nameBg: "Инна Герова",
+      role: "Senior Writer",
+      roleBg: "Старши автор",
+      stories: 14,
+      quote: "Listens for the quieter truths between mountain mornings.",
+      quoteBg: "Слуша тихите истини между планинските утрини.",
+      image: "/heroimg.jpg",
+    },
+    {
+      id: "a3",
+      name: "Angelika Petrova",
+      nameBg: "Ангелика Петрова",
+      role: "Culture Editor",
+      roleBg: "Културен редактор",
+      stories: 11,
+      quote: "Documents crafts before the hands that know them are gone.",
+      quoteBg:
+        "Документира занаяти, преди ръцете, които ги знаят, да изчезнат.",
+      image: "/craftsman.jpg",
+    },
+    {
+      id: "a4",
+      name: "Natalia Dimitrova",
+      nameBg: "Наталия Димитрова",
+      role: "Photojournalist",
+      roleBg: "Фотожурналист",
+      stories: 9,
+      quote: "Sees light as the first language of memory.",
+      quoteBg: "Вижда светлината като първия език на паметта.",
+      image: "/village.jpg",
+    },
+  ],
+  writeForUs: {
+    title: "Become a Storyteller",
+    titleBg: "Станете разказвач",
+    line1: "Have a story from Northwestern Bulgaria?",
+    line1Bg: "Имате история от Северозападна България?",
+    line2: "We'd love to hear it.",
+    line2Bg: "Бихме искали да я чуем.",
+    cta: "Write for Us",
+    ctaBg: "Пишете за нас",
+  },
+  support: {
+    eyebrow: "Independent journalism",
+    eyebrowBg: "Независима журналистика",
+    title: "Support Prizni",
+    titleBg: "Подкрепете „Призни“",
+    text: "Your support keeps local voices heard, traditions documented, and heritage alive for the next generation.",
+    textBg:
+      "Вашата подкрепа държи местните гласове чути, традициите документирани и наследството живо за следващите поколения.",
+    cta: "Support Us",
+    ctaBg: "Подкрепете ни",
+  },
+  announcement: {
+    text: "Summer Edition 2026 is live - one long story, every Sunday.",
+    textBg: "Лятното издание 2026 е тук - по една дълга история всяка неделя.",
+  },
   voices: [
     {
       id: "v1",
@@ -236,8 +344,10 @@ export const journalContent = {
       speaker: "Baba Stefka (84 yrs)",
       speakerBg: "Баба Стефка (84 г.)",
       duration: "6 min",
-      audioUrl: "https://actions.google.com/sounds/v1/ambiences/forest_wind.ogg",
-      quote: "When I sit at the loom, time disappears. My hands remember patterns my eyes cannot see.",
+      audioUrl:
+        "https://actions.google.com/sounds/v1/ambiences/forest_wind.ogg",
+      quote:
+        "When I sit at the loom, time disappears. My hands remember patterns my eyes cannot see.",
       image: "/woman.jpg",
     },
     {
@@ -247,8 +357,10 @@ export const journalContent = {
       speaker: "Dimitar the Fisherman",
       speakerBg: "Димитър Рибаря",
       duration: "8 min",
-      audioUrl: "https://actions.google.com/sounds/v1/ambiences/outdoor_water_stream.ogg",
-      quote: "The river changes every morning. If you listen carefully at 5 AM, it tells you what the day holds.",
+      audioUrl:
+        "https://actions.google.com/sounds/v1/ambiences/outdoor_water_stream.ogg",
+      quote:
+        "The river changes every morning. If you listen carefully at 5 AM, it tells you what the day holds.",
       image: "/river.jpg",
     },
     {
@@ -259,7 +371,8 @@ export const journalContent = {
       speakerBg: "Петър Архивиста",
       duration: "5 min",
       audioUrl: "https://actions.google.com/sounds/v1/ambiences/heavy_wind.ogg",
-      quote: "Every stone here has a name given by people who lived hundreds of years ago.",
+      quote:
+        "Every stone here has a name given by people who lived hundreds of years ago.",
       image: "/mountains.jpg",
     },
   ],
@@ -272,9 +385,10 @@ export const journalContent = {
   newsletter: {
     title: "Receive one story every Sunday.",
     titleBg: "Получавайте по една история всяка неделя.",
-    subtitle: "No spam. No daily noise. Just a calm weekly letter with one deep story from Northwestern Bulgaria.",
+    subtitle:
+      "No spam. No daily noise. Just a calm weekly letter with one deep story from Northwestern Bulgaria.",
     emailPlaceholder: "Enter your email address...",
     buttonText: "Subscribe",
     buttonTextBg: "Абонирайте се",
   },
-} as const
+} as const;

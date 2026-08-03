@@ -8,30 +8,28 @@ interface CuratedCollectionsProps {
 }
 
 export function CuratedCollections({ lang, onSelectCollection }: CuratedCollectionsProps) {
-  const collections = journalContent.collections
+  const collections = journalContent.collections.slice(0, 3)
 
   return (
-    <section id="collections" className="bg-[#FDFBF7] py-24 md:py-32 px-6 md:px-12 border-t border-b border-[#EAE6DF]">
+    <section id="discover" className="bg-[#FDFBF7] py-20 md:py-28 px-6 md:px-12 border-t border-b border-[#EAE6DF]">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] font-sans text-[#0C2686] font-medium block mb-2">
-              {lang === 'bg' ? 'Селекция от редактора' : 'Curated Editions'}
+              {lang === 'bg' ? 'Селекция от редактора' : "Editor's Picks"}
             </span>
             <h2 className="font-heading text-4xl md:text-5xl text-[#1A1A1A] font-normal">
-              {lang === 'bg' ? 'Колекции за четене' : "Today's Collections"}
+              {lang === 'bg' ? 'Открийте' : 'Discover'}
             </h2>
           </div>
           <p className="font-sans text-xs uppercase tracking-[0.2em] text-[#1A1A1A]/50 max-w-xs">
             {lang === 'bg'
-              ? 'Тематично организирани истории без излишен шум.'
+              ? 'Тематично организирани истории за бавно четене.'
               : 'Thoughtfully grouped long-form stories for slow reading.'}
           </p>
         </div>
 
-        {/* Large Horizontal Cards Grid / Scroll */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {collections.map((item, index) => (
             <motion.div
               key={item.id}
@@ -43,23 +41,19 @@ export function CuratedCollections({ lang, onSelectCollection }: CuratedCollecti
               className="group cursor-pointer rounded-[16px] border border-[#EAE6DF] bg-white p-4 shadow-[0_4px_24px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.07)] hover:border-[#0C2686]/30 flex flex-col justify-between"
             >
               <div>
-                {/* Image Container */}
-                <div className="relative h-64 w-full overflow-hidden rounded-xl bg-[#1A1A1A] mb-6">
+                <div className="relative h-56 w-full overflow-hidden rounded-xl bg-[#1A1A1A] mb-6">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  
-                  {/* Story Count Badge */}
                   <div className="absolute top-4 right-4 rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[11px] font-sans font-medium text-[#1A1A1A] flex items-center gap-1.5">
                     <BookOpen className="size-3 text-[#0C2686]" />
                     <span>{lang === 'bg' ? item.countBg : item.count}</span>
                   </div>
                 </div>
 
-                {/* Title & Description */}
                 <h3 className="font-heading text-2xl md:text-3xl text-[#1A1A1A] font-normal mb-3 group-hover:text-[#0C2686] transition-colors">
                   {lang === 'bg' ? item.titleBg : item.title}
                 </h3>
@@ -68,9 +62,8 @@ export function CuratedCollections({ lang, onSelectCollection }: CuratedCollecti
                 </p>
               </div>
 
-              {/* Action Link */}
               <div className="pt-4 border-t border-[#EAE6DF]/60 flex items-center justify-between text-xs font-sans uppercase tracking-[0.2em] font-medium text-[#0C2686]">
-                <span>{lang === 'bg' ? 'Разгледайте' : 'Explore Collection'}</span>
+                <span>{lang === 'bg' ? 'Разгледайте' : 'Explore'}</span>
                 <ChevronRight className="size-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </motion.div>

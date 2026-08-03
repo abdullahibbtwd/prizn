@@ -142,7 +142,7 @@ export function StoryReaderModal({ isOpen, onClose, storyTitle, lang }: StoryRea
                   "{defaultStory.fullContent[2]}"
                 </p>
                 <cite className="font-sans text-xs uppercase tracking-widest text-[#0C2686] not-italic">
-                  — Grandfather Ivan, Belogradchik Region
+                  - Grandfather Ivan, Belogradchik Region
                 </cite>
               </blockquote>
 

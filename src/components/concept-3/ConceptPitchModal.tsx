@@ -13,7 +13,7 @@ export function ConceptPitchModal({ isOpen, onClose }: ConceptPitchModalProps) {
   const concepts = [
     {
       id: 'concept-1',
-      title: 'Concept 1 — Faces of the Northwest',
+      title: 'Concept 1 - Faces of the Northwest',
       subtitle: 'Emotion-first',
       tag: 'Емоционален Фокус',
       description:
@@ -25,7 +25,7 @@ export function ConceptPitchModal({ isOpen, onClose }: ConceptPitchModalProps) {
     },
     {
       id: 'concept-2',
-      title: 'Concept 2 — Living Northwest',
+      title: 'Concept 2 - Living Northwest',
       subtitle: 'Discovery-first',
       tag: 'Откривателски Фокус',
       description:
@@ -37,7 +37,7 @@ export function ConceptPitchModal({ isOpen, onClose }: ConceptPitchModalProps) {
     },
     {
       id: 'concept-3',
-      title: 'Concept 3 — The Living Journal',
+      title: 'Concept 3 - The Living Journal',
       subtitle: 'Editorial-first',
       tag: 'Премиум Дигитален Журнал',
       description:
@@ -134,7 +134,7 @@ export function ConceptPitchModal({ isOpen, onClose }: ConceptPitchModalProps) {
           </div>
 
           <div className="text-center text-xs font-sans text-[#1A1A1A]/50">
-            Selected: <span className="font-medium text-[#0C2686]">Concept 3 — The Living Journal</span>
+            Selected: <span className="font-medium text-[#0C2686]">Concept 3 - The Living Journal</span>
           </div>
         </div>
       </motion.div>
