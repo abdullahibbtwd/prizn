@@ -8,4 +8,4 @@ Replace these placeholder references with local high-texture, warm, side-lit pho
 - `bread.jpg` / `festival.jpg` / `craftsman.jpg` - Cultural and tradition details
 - `museum.jpg` / `church.jpg` / `woman.jpg` - Human and architectural stories
 
-Update paths in `src/data/concept-1/content.ts` once assets are added.
+Update paths in `src/data/concept-3/content.ts` once assets are added.

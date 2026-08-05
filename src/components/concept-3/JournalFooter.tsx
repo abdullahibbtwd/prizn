@@ -1,67 +1,77 @@
 import { Link } from 'react-router-dom'
-import { Heart, PenLine, Sparkles } from 'lucide-react'
-import { handleSmoothNavClick } from '@/lib/utils'
+import { Heart, PenLine } from 'lucide-react'
+import { getJournalNavLinks } from '@/data/concept-3/nav'
 
 interface JournalFooterProps {
   lang: 'bg' | 'en'
-  onOpenPitch: () => void
 }
 
-export function JournalFooter({ lang, onOpenPitch }: JournalFooterProps) {
+export function JournalFooter({ lang }: JournalFooterProps) {
+  const navLinks = getJournalNavLinks(lang)
+
   return (
-    <footer className="bg-[#FDFBF7] text-[#1A1A1A] py-24 md:py-32 px-6 md:px-12 overflow-x-hidden border-t border-[#EAE6DF]">
-      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+    <footer className="overflow-x-hidden border-t border-[#EAE6DF] bg-[#FDFBF7] px-6 py-24 text-[#1A1A1A] md:px-12 md:py-32">
+      <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
         <Link
-          to="/concept-3"
-          className="font-heading text-5xl sm:text-7xl md:text-[120px] tracking-[0.15em] sm:tracking-[0.25em] font-light uppercase text-[#1A1A1A] hover:opacity-85 transition-opacity"
+          to="/"
+          className="font-heading text-5xl font-light uppercase tracking-[0.15em] text-[#1A1A1A] transition-opacity hover:opacity-85 sm:text-7xl sm:tracking-[0.25em] md:text-[120px]"
         >
           PRIZNI
         </Link>
 
-        <p className="mt-8 max-w-2xl font-sans text-sm md:text-base text-[#1A1A1A]/65 font-light leading-relaxed">
+        <p className="mt-8 max-w-2xl font-sans text-sm font-light leading-relaxed text-[#1A1A1A]/65 md:text-base">
           {lang === 'bg'
             ? 'Луксозно дигитално издание, посветено на културното наследство, живите традиции и изключителните човешки истории на Северозападна България.'
             : 'A luxury editorial journal dedicated to preserving the cultural heritage, living traditions, and extraordinary human stories of Northwestern Bulgaria.'}
         </p>
 
-        <div className="mt-10 flex max-w-full flex-wrap items-center justify-center gap-x-6 gap-y-3 font-sans text-xs uppercase tracking-[0.2em] text-[#1A1A1A]/70 sm:gap-x-8">
-          <a
-            href="#write-for-us"
-            onClick={(e) => handleSmoothNavClick(e, '#write-for-us', 96)}
-            className="inline-flex items-center gap-1.5 hover:text-[#0C2686] transition-colors"
+        <nav
+          aria-label={lang === 'bg' ? 'Навигация' : 'Browse'}
+          className="mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-x-5 gap-y-3 font-sans text-[11px] uppercase tracking-[0.2em] text-[#1A1A1A]/70 sm:gap-x-7"
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="transition-colors hover:text-[#0C2686]"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="mt-10 flex max-w-full flex-wrap items-center justify-center gap-x-6 gap-y-3 font-sans text-xs uppercase tracking-[0.2em] text-[#1A1A1A]/55 sm:gap-x-8">
+          <Link
+            to="/write-for-us"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-[#0C2686]"
           >
             <PenLine className="size-3.5" />
             {lang === 'bg' ? 'Пишете за нас' : 'Write for Us'}
-          </a>
-          <a
-            href="#support"
-            onClick={(e) => handleSmoothNavClick(e, '#support', 96)}
-            className="inline-flex items-center gap-1.5 hover:text-[#0C2686] transition-colors"
+          </Link>
+          <Link
+            to="/support"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-[#0C2686]"
           >
             <Heart className="size-3.5" />
             {lang === 'bg' ? 'Подкрепете ни' : 'Support Us'}
-          </a>
-          <a href="#instagram" className="hover:text-[#0C2686] transition-colors">
+          </Link>
+          <Link
+            to="/partnerships"
+            className="transition-colors hover:text-[#0C2686]"
+          >
+            {lang === 'bg' ? 'Партньорства' : 'Partnerships'}
+          </Link>
+          <a href="#instagram" className="transition-colors hover:text-[#0C2686]">
             Instagram
           </a>
-          <a href="#facebook" className="hover:text-[#0C2686] transition-colors">
+          <a href="#facebook" className="transition-colors hover:text-[#0C2686]">
             Facebook
           </a>
         </div>
 
-        <div className="mt-12">
-          <button
-            onClick={onOpenPitch}
-            className="inline-flex items-center gap-2 rounded-full border border-[#0C2686]/30 bg-[#0C2686]/5 px-6 py-3 text-xs font-sans uppercase tracking-[0.2em] font-medium text-[#0C2686] hover:bg-[#0C2686] hover:text-white transition-all duration-300 shadow-xs"
-          >
-            <Sparkles className="size-4 text-[#0C2686]" />
-            <span>{lang === 'bg' ? 'Презентация на концепциите' : 'Client Presentation Overview'}</span>
-          </button>
-        </div>
-
-        <div className="mt-16 pt-8 border-t border-[#EAE6DF] w-full flex flex-col sm:flex-row items-center justify-between text-[11px] font-sans text-[#1A1A1A]/40 uppercase tracking-widest gap-4">
-          <span>© 2026 PRIZNI - Concept 3: The Living Journal</span>
-          <span>Designed with Kinfolk & Aesop Editorial Aesthetics</span>
+        <div className="mt-16 flex w-full flex-col items-center justify-between gap-4 border-t border-[#EAE6DF] pt-8 font-sans text-[11px] uppercase tracking-widest text-[#1A1A1A]/40 sm:flex-row">
+          <span>© 2026 PRIZNI</span>
+          <span>The Living Journal of Northwestern Bulgaria</span>
         </div>
       </div>
     </footer>

@@ -2,7 +2,7 @@ export const journalContent = {
   hero: {
     brand: "PRIZNI",
     title: "The Untold Stories of Northwestern Bulgaria",
-    bgTitle: "Скритите истории на Северозапада",
+    bgTitle: "Неразказаните истории на Северозапада",
     edition: "Summer Edition 2026",
     editionBg: "Лятно издание 2026",
     cta: "Begin Reading",
@@ -224,6 +224,33 @@ export const journalContent = {
       description:
         "Community harvest customs celebrating the yield of wheat, walnuts, and sunflowers across the fertile plain.",
     },
+    {
+      id: "t4",
+      title: "Chiprovtsi Kilims",
+      titleBg: "Чипровски килими",
+      sub: "Sacred woven geometry",
+      image: "/craftsman.jpg",
+      description:
+        "UNESCO-recognized carpet weaving where every knot carries prayer, memory, and mountain silence.",
+    },
+    {
+      id: "t5",
+      title: "Herb Gathering",
+      titleBg: "Бране на билки",
+      sub: "Mountain pharmacy",
+      image: "/forest.jpg",
+      description:
+        "Dawn rituals of collecting thyme, linden, and wild roses along the Balkans' green slopes.",
+    },
+    {
+      id: "t6",
+      title: "St. George's Day",
+      titleBg: "Гергьовден",
+      sub: "Spring's first feast",
+      image: "/mountains.jpg",
+      description:
+        "Lamb, fresh milk, and green wreaths marking the turning of the pastoral year across the Northwest.",
+    },
   ],
   humanStories: [
     {
@@ -261,6 +288,42 @@ export const journalContent = {
       image: "/festival.jpg",
       excerpt:
         "Between every knot of a Chiprovtsi kilim lives a silence older than the village itself.",
+    },
+    {
+      id: "hs4",
+      title: "Beekeeper of the Balkan Edge",
+      titleBg: "Пчеларят от края на Балкана",
+      author: "Natalia Dimitrova",
+      readTime: "7 min",
+      readTimeBg: "7 мин",
+      location: "Враца",
+      image: "/forest.jpg",
+      excerpt:
+        "In wooden hives above the gorge, Georgi measures seasons by the taste of honey, not by calendars.",
+    },
+    {
+      id: "hs5",
+      title: "The Woman Who Opens the Museum at Dawn",
+      titleBg: "Жената, която отваря музея на разсъмване",
+      author: "Inna Gerova",
+      readTime: "10 min",
+      readTimeBg: "10 мин",
+      location: "Лом",
+      image: "/church.jpg",
+      excerpt:
+        "Before visitors arrive, Elena dusts the glass cases and speaks softly to objects nobody else hears.",
+    },
+    {
+      id: "hs6",
+      title: "Shepherd Songs Above Belogradchik",
+      titleBg: "Овчарски песни над Белоградчик",
+      author: "Albena Nikolova",
+      readTime: "8 min",
+      readTimeBg: "8 мин",
+      location: "Белоградчик",
+      image: "/mountains.jpg",
+      excerpt:
+        "At dusk the rocks hold the echo of a melody older than the fortress below them.",
     },
   ],
   authors: [
@@ -374,6 +437,225 @@ export const journalContent = {
       quote:
         "Every stone here has a name given by people who lived hundreds of years ago.",
       image: "/mountains.jpg",
+    },
+    {
+      id: "v4",
+      title: "Sunday Bells of Lom",
+      titleBg: "Неделните камбани на Лом",
+      speaker: "Father Nikolay",
+      speakerBg: "Отец Николай",
+      duration: "4 min",
+      audioUrl: "https://actions.google.com/sounds/v1/ambiences/quiet_city_park.ogg",
+      quote:
+        "When the bells ring, the river seems to pause for a moment and listen with us.",
+      image: "/church.jpg",
+    },
+    {
+      id: "v5",
+      title: "Kilim Patterns Spoken Aloud",
+      titleBg: "Килимени мотиви на глас",
+      speaker: "Elena the Weaver",
+      speakerBg: "Елена Тъкачката",
+      duration: "7 min",
+      audioUrl: "https://actions.google.com/sounds/v1/ambiences/warbler_in_forest.ogg",
+      quote:
+        "My grandmother never drew patterns. She sang them, and the loom answered.",
+      image: "/craftsman.jpg",
+    },
+  ],
+  sports: [
+    {
+      id: "sp1",
+      title: "Riverbank Runners of Lom",
+      titleBg: "Бреговите бегачи на Лом",
+      sub: "Dawn athletics",
+      subBg: "Утринна атлетика",
+      location: "Lom",
+      locationBg: "Лом",
+      readTime: "7 min",
+      readTimeBg: "7 мин",
+      image: "/river.jpg",
+      excerpt:
+        "Before the town wakes, a quiet pack measures the Danube in footsteps and steam.",
+    },
+    {
+      id: "sp2",
+      title: "Hands Against the Red Rocks",
+      titleBg: "Ръце срещу червените скали",
+      sub: "Climbing culture",
+      subBg: "Култура на катеренето",
+      location: "Belogradchik",
+      locationBg: "Белоградчик",
+      readTime: "8 min",
+      readTimeBg: "8 мин",
+      image: "/mountains.jpg",
+      excerpt:
+        "Local climbers treat Belogradchik’s sandstone like a grammar — each route another sentence.",
+    },
+    {
+      id: "sp3",
+      title: "Saturday Pitch Above the Gorge",
+      titleBg: "Съботният терен над ждрелото",
+      sub: "Youth football",
+      subBg: "Младежки футбол",
+      location: "Vratsa",
+      locationBg: "Враца",
+      readTime: "6 min",
+      readTimeBg: "6 мин",
+      image: "/forest.jpg",
+      excerpt:
+        "A youth match where grandparents still keep score on cigarette paper.",
+    },
+    {
+      id: "sp4",
+      title: "Oars Before Opening Time",
+      titleBg: "Весла преди работно време",
+      sub: "Rowing",
+      subBg: "Гребане",
+      location: "Vidin",
+      locationBg: "Видин",
+      readTime: "7 min",
+      readTimeBg: "7 мин",
+      image: "/heroimg.jpg",
+      excerpt:
+        "Amateur rowers share the water with fishermen — and a strict dawn etiquette.",
+    },
+  ],
+  events: [
+    {
+      id: "ev1",
+      title: "Chiprovtsi Carpet Fair",
+      titleBg: "Панаир на чипровския килим",
+      date: "12–14 Sep 2026",
+      dateBg: "12–14 сеп 2026",
+      location: "Chiprovtsi",
+      locationBg: "Чипровци",
+      image: "/festival.jpg",
+      excerpt:
+        "Looms in the square, coffee in copper pots, and patterns that travel farther than buses.",
+    },
+    {
+      id: "ev2",
+      title: "Night Paths Under the Rocks",
+      titleBg: "Нощни пътеки под скалите",
+      date: "Every Fri · Aug 2026",
+      dateBg: "Всеки петък · авг 2026",
+      location: "Belogradchik",
+      locationBg: "Белоградчик",
+      image: "/mountains.jpg",
+      excerpt:
+        "Guided dusk walks where lanterns teach the sandstone new outlines.",
+    },
+    {
+      id: "ev3",
+      title: "Sunday River Market",
+      titleBg: "Неделният речен пазар",
+      date: "Sundays · Year-round",
+      dateBg: "Недели · Целогодишно",
+      location: "Vidin",
+      locationBg: "Видин",
+      image: "/river.jpg",
+      excerpt: "Honey, salt fish, and gossip timed to the ferry schedule.",
+    },
+    {
+      id: "ev4",
+      title: "Heritage Open Weekend",
+      titleBg: "Уикенд на отвореното наследство",
+      date: "3–4 Oct 2026",
+      dateBg: "3–4 окт 2026",
+      location: "Vratsa",
+      locationBg: "Враца",
+      image: "/church.jpg",
+      excerpt:
+        "Courtyards unlock; choirs rehearse on stairwells; museums refuse to whisper.",
+    },
+  ],
+  video: [
+    {
+      id: "vd1",
+      title: "Kilim in Motion",
+      titleBg: "Килим в движение",
+      duration: "12 min",
+      location: "Chiprovtsi",
+      locationBg: "Чипровци",
+      image: "/craftsman.jpg",
+      excerpt:
+        "A short film where hands, thread, and window light keep the same tempo.",
+    },
+    {
+      id: "vd2",
+      title: "Fog Over the Pass",
+      titleBg: "Мъгла над прохода",
+      duration: "8 min",
+      location: "Vratsa Balkan",
+      locationBg: "Врачански Балкан",
+      image: "/mountains.jpg",
+      excerpt:
+        "Time-lapse and footsteps through Vratsa Balkan when the road disappears.",
+    },
+    {
+      id: "vd3",
+      title: "Bread Before Dawn",
+      titleBg: "Хляб преди зори",
+      duration: "9 min",
+      location: "Montana",
+      locationBg: "Монтана",
+      image: "/bread.jpg",
+      excerpt:
+        "A bakery portrait from dough to street window, told without narration.",
+    },
+    {
+      id: "vd4",
+      title: "Crossing With the Ferry",
+      titleBg: "Преминаване с ферибота",
+      duration: "6 min",
+      location: "Danube",
+      locationBg: "Дунав",
+      image: "/river.jpg",
+      excerpt:
+        "One slow traverse — engines, gulls, and people practicing patience.",
+    },
+  ],
+  campaigns: [
+    {
+      id: "cp1",
+      title: "Save the Village Reading Rooms",
+      titleBg: "Спасете селските читалища",
+      status: "Active",
+      statusBg: "Активна",
+      image: "/meseum.jpg",
+      excerpt:
+        "A fund for roofs, shelves, and the quiet electricity of borrowed books.",
+    },
+    {
+      id: "cp2",
+      title: "Apprentice the Loom",
+      titleBg: "Чиракуване на стана",
+      status: "Open applications",
+      statusBg: "Отворени кандидатствания",
+      image: "/craftsman.jpg",
+      excerpt:
+        "Scholarships pairing young weavers with living masters in Chiprovtsi.",
+    },
+    {
+      id: "cp3",
+      title: "Restore the Path Markers",
+      titleBg: "Възстановете маркировката на пътеките",
+      status: "Volunteer days",
+      statusBg: "Доброволчески дни",
+      image: "/forest.jpg",
+      excerpt:
+        "Stone and paint signs for trails that still remember feet better than maps.",
+    },
+    {
+      id: "cp4",
+      title: "Document the Dialects",
+      titleBg: "Документирайте диалектите",
+      status: "Field season",
+      statusBg: "Теренен сезон",
+      image: "/woman.jpg",
+      excerpt:
+        "Recording elders before verbs go quiet — an archive you can still hear.",
     },
   ],
   quote: {
