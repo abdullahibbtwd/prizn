@@ -7,7 +7,24 @@ export const journalContent = {
     editionBg: "Лятно издание 2026",
     cta: "Begin Reading",
     ctaBg: "Започнете четенето",
-    heroImage: "/heroimg.jpg",
+    /** Fallback / first frame; full set lives in heroImages for the cover slider */
+    heroImage: "/hero/dji-0708.webp",
+    /**
+     * Optimized WebP covers (2400px wide). Ordered strongest → supporting for client review.
+     * Source originals stay in /public; web versions in /public/hero.
+     */
+    heroImages: [
+      "/hero/dji-0708.webp", // church at dusk — strongest landmark + text sky
+      "/hero/dji-0930.webp", // Belogradchik fortress — signature place
+      "/hero/dji-0871.webp", // centered sunset fields — cinematic
+      "/hero/dji-0111.webp", // hillside town — sense of place
+      "/hero/dji-0983.webp", // fortress courtyard — heritage
+      "/hero/dji-0631.webp", // village sunset — warm rural
+      "/hero/dji-0308.webp", // rocks & valley — nature scale
+      "/hero/dji-0985.webp", // golden fields pano
+      "/hero/dji-0019.webp", // river / stadium valley
+      "/hero/hero-current.webp", // previous cover
+    ],
   },
   editorsLetter: {
     title: "Editor's Letter",
